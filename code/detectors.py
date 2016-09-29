@@ -4,7 +4,7 @@ These functions take a vector of values, and return a boolean vector of the
 same length as the input, where True indicates the corresponding value is an
 outlier.
 
-The outlier detection routines will likeley be adapted to the specific measure
+The outlier detection routines will likely be adapted to the specific measure
 that is being worked on.  So, some detector functions will work on values > 0,
 other on normally distributed values etc.  The routines should check that their
 requirements are met and raise an error otherwise.
