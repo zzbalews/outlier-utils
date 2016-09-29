@@ -1,0 +1,7 @@
+# Where the exercises etc go, given the solutions
+
+[solution.spm_funcs]
+out_path = '{one_down}/code/spm_funcs.py'
+
+[solution.test_spm_funcs]
+out_path = '{one_down}/code/tests/test_spm_funcs.py'
