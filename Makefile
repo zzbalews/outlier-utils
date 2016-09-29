@@ -9,6 +9,7 @@ LAB_TOOLS = .lab-tools
 write-check-solutions:
 	$(PYTHON) $(LAB_TOOLS)/proc_solutions.py write-solutions
 	$(PYTHON) code/tests/test_spm_funcs.py
+	$(PYTHON) code/tests/test_detectors.py
 	$(PYTHON) $(LAB_TOOLS)/proc_solutions.py write
 
 check:
