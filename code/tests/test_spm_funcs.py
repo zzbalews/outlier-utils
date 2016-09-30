@@ -16,7 +16,7 @@ MY_DIR = dirname(__file__)
 EXAMPLE_FILENAME = 'ds107_sub012_t1r2_small.nii'
 
 # Here you should add the code directory to the Python path
-+++your code here+++
+sys.path.append(abspath('code'))
 
 import numpy as np
 

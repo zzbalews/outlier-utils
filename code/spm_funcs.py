@@ -22,11 +22,16 @@ or better, in IPython::
 from __future__ import print_function, division
 
 # Any imports you need
-+++your code here+++
+import numpy as np
+import nibabel as nib
 
 
 def spm_global(vol):
     """ Calculate SPM global metric for array `vol`
+    SPM global metric:
+        1. find mean of vol
+        2. keep only voxels > mean/8
+        3. return mean of remaining voxels
 
     Parameters
     ----------
@@ -38,8 +43,9 @@ def spm_global(vol):
     g : float
         SPM global metric for `vol`
     """
-    # +++your code here+++
-    return
+    vol_mean = np.mean(vol, axis = (0,1,2)) #scalar
+    vol_subset = vol[vol>vol_mean/8] #vector
+    return np.mean(vol_subset)
 
 
 def get_spm_globals(fname):
@@ -55,5 +61,10 @@ def get_spm_globals(fname):
     spm_vals : array
         SPM global metric for each 3D volume in the 4D image.
     """
-    # +++your code here+++
-    return
+    img = nib.load(fname,mmap=False)
+    data = img.get_data()
+    n_vols = data.shape[-1]
+    spm_vals = []
+    for i in range(n_vols):
+        spm_vals.append(spm_global(data[...,i]))
+    return spm_vals
