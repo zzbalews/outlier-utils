@@ -15,7 +15,7 @@ import sys
 MY_DIR = dirname(__file__)
 
 # Here you should add the code directory to the Python path
-+++your code here+++
+sys.path.append(abspath('code'))
 
 import numpy as np
 
